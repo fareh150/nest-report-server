@@ -1,4 +1,8 @@
-import { StyleDictionary, TDocumentDefinitions } from 'pdfmake/interfaces';
+import {
+  Content,
+  StyleDictionary,
+  TDocumentDefinitions,
+} from 'pdfmake/interfaces';
 
 const style: StyleDictionary = {
   header: {
@@ -18,11 +22,19 @@ const style: StyleDictionary = {
   },
 };
 
+const logo: Content = {
+  image: 'src/assets/tucan-code-logo.png',
+  width: 100,
+  height: 100,
+  alignment: 'center',
+  margin: [0, 0, 0, 20], // [left, top, right, bottom]
+};
+
 export const getEmploymentLetterReport = (): TDocumentDefinitions => {
   const docDefinition: TDocumentDefinitions = {
     styles: style,
     header: {
-      columns: [1, 2, 3],
+      columns: [logo],
     },
     content: [
       {
