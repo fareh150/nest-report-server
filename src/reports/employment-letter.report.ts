@@ -14,13 +14,16 @@ const style: StyleDictionary = {
   signature: {
     fontSize: 14,
     bold: true,
-    alignment: 'center',
+    alignment: 'left',
   },
 };
 
 export const getEmploymentLetterReport = (): TDocumentDefinitions => {
   const docDefinition: TDocumentDefinitions = {
     styles: style,
+    header: {
+      columns: [1, 2, 3],
+    },
     content: [
       {
         text: 'CONSTANCIA DE EMPLEO',
