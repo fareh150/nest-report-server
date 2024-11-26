@@ -6,12 +6,12 @@ export const getCountryReport = (): TDocumentDefinitions => {
     pageOrientation: 'landscape',
     header: headerSection({
       title: 'Countries Report',
-     // subTitle: 'List of countries',
+      // subTitle: 'List of countries',
     }),
     pageMargins: [40, 110, 40, 60], // [left, top, right, bottom]
     content: [
       {
-        layout: 'headerLineOnly',
+        layout: 'lightHorizontalLines',
         table: {
           headerRows: 1,
           widths: ['*', 'auto', 100, '*'],
