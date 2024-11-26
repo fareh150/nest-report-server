@@ -9,11 +9,11 @@ const style: StyleDictionary = {
     fontSize: 18,
     bold: true,
     alignment: 'center',
-    margin: [0, 0, 0, 20], // [left, top, right, bottom]
+    margin: [0, 60, 0, 20],
   },
   body: {
     alignment: 'justify',
-    margin: [0, 0, 0, 50], // [left, top, right, bottom]
+    margin: [0, 0, 0, 70],
   },
   signature: {
     fontSize: 14,
@@ -27,14 +27,22 @@ const logo: Content = {
   width: 100,
   height: 100,
   alignment: 'center',
-  margin: [0, 0, 0, 20], // [left, top, right, bottom]
+  margin: [0, 0, 0, 20],
 };
 
 export const getEmploymentLetterReport = (): TDocumentDefinitions => {
   const docDefinition: TDocumentDefinitions = {
     styles: style,
+    pageMargins: [40, 60, 40, 60], // [left, top, right, bottom]
     header: {
-      columns: [logo],
+      columns: [
+        logo,
+        {
+          text: `${new Date().toLocaleDateString()}`,
+          alignment: 'right',
+          margin: [0, 20, 20, 20],
+        },
+      ],
     },
     content: [
       {
