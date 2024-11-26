@@ -11,7 +11,7 @@ export const getCountryReport = (): TDocumentDefinitions => {
     pageMargins: [40, 110, 40, 60], // [left, top, right, bottom]
     content: [
       {
-        layout: 'lightHorizontalLines',
+        layout: 'headerLineOnly',
         table: {
           headerRows: 1,
           widths: ['*', 'auto', 100, '*'],
