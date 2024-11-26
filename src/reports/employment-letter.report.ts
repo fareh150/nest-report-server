@@ -29,7 +29,11 @@ export const getEmploymentLetterReport = (): TDocumentDefinitions => {
   const docDefinition: TDocumentDefinitions = {
     styles: style,
     pageMargins: [40, 60, 40, 60], // [left, top, right, bottom]
-    header: headerSection({ showLogo: false, showDate: false }),
+    header: headerSection({
+      showLogo: true,
+      showDate: true,
+      // title: 'CONSTANCIA DE EMPLEO',
+    }),
     content: [
       {
         text: 'CONSTANCIA DE EMPLEO',

@@ -28,7 +28,17 @@ export const headerSection = (options: HeaderOptions): Content => {
       }
     : null;
 
+  const headerTitle: Content = title
+    ? {
+        text: title,
+        style: {
+          bold: true,
+          alignment: 'center',
+        },
+      }
+    : null;
+
   return {
-    columns: [headerLogo, headerDate],
+    columns: [headerLogo, headerTitle, headerDate],
   };
 };
