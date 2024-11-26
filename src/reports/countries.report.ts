@@ -1,12 +1,22 @@
+import { countries as Country } from './../../node_modules/.prisma/client/index.d';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { headerSection } from './sections/header.section';
 
-export const getCountryReport = (): TDocumentDefinitions => {
+interface ReportOptions {
+  title?: string;
+  subTitle?: string;
+  countries: Country[];
+}
+
+export const getCountryReport = (
+  options: ReportOptions,
+): TDocumentDefinitions => {
+  const { title, subTitle, countries } = options;
   return {
     pageOrientation: 'landscape',
     header: headerSection({
-      title: 'Countries Report',
-      subtitle: 'List of countries',
+      title: title ?? 'Countries Report',
+      subtitle: subTitle ?? 'List of countries',
     }),
     pageMargins: [40, 110, 40, 60], // [left, top, right, bottom]
     content: [
@@ -14,17 +24,17 @@ export const getCountryReport = (): TDocumentDefinitions => {
         layout: 'lightHorizontalLines',
         table: {
           headerRows: 1,
-          widths: ['*', 'auto', 100, '*'],
+          widths: [50, 50, 50, '*', 'auto', '*'], // need to be same length than body
           body: [
-            ['first', 'second', 'third', 'the last one'],
-            ['value 1', 'value 2', 'value 3', 'value 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
-            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            ['ID', 'ISO2', 'ISO3', 'Name', 'Continent', 'Local Name'],
+            ...countries.map((country) => [
+              country.id.toString(),
+              country.iso2,
+              country.iso3,
+              { text: country.name, bold: true },
+              country.continent,
+              country.local_name,
+            ]),
           ],
         },
       },
