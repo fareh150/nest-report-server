@@ -54,6 +54,7 @@ export const headerSection = (options: HeaderOptions): Content => {
               }
             : null,
         ],
+        margin: [0, 30, 0, 0],
       }
     : null;
 
