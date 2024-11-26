@@ -19,9 +19,11 @@ interface HeaderOptions {
 export const headerSection = (options: HeaderOptions): Content => {
   const { title, subtitle, showLogo = true, showDate = true } = options;
 
+  const headerLogo = showLogo ? logo : null;
+
   return {
     columns: [
-      showLogo ? logo : null,
+      headerLogo,
       {
         text: DateFormatter.getDDMMYYYY(new Date()),
         alignment: 'right',
