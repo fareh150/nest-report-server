@@ -8,6 +8,7 @@ export const getCountryReport = (): TDocumentDefinitions => {
       title: 'Countries Report',
      // subTitle: 'List of countries',
     }),
+    pageMargins: [40, 110, 40, 60], // [left, top, right, bottom]
     content: [
       {
         layout: 'lightHorizontalLines',
@@ -17,6 +18,12 @@ export const getCountryReport = (): TDocumentDefinitions => {
           body: [
             ['first', 'second', 'third', 'the last one'],
             ['value 1', 'value 2', 'value 3', 'value 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
+            [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
             [{ text: 'Bold value', bold: true }, 'val 2', 'val 3', 'val 4'],
           ],
         },
