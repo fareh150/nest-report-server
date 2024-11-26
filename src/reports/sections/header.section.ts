@@ -28,6 +28,13 @@ export const headerSection = (options: HeaderOptions): Content => {
 
   const headerLogo: Content = showLogo ? logo : null;
   const headerDate: Content = showDate ? currentDate : null;
+  const subtitleData: Content = {
+    text: subtitle,
+    style: {
+      fontSize: 15,
+      alignment: 'center',
+    },
+  };
   const separator: Content = {
     text: '',
     width: 100,
@@ -38,21 +45,13 @@ export const headerSection = (options: HeaderOptions): Content => {
         stack: [
           {
             text: title,
+            alignment: 'center',
             style: {
               bold: true,
-              fontSize: 20,
-              alignment: 'center',
+              fontSize: 22,
             },
           },
-          subtitle
-            ? {
-                text: subtitle,
-                style: {
-                  fontSize: 15,
-                  alignment: 'center',
-                },
-              }
-            : null,
+          subtitle ? subtitleData : null,
         ],
         margin: [0, 30, 0, 0],
       }
