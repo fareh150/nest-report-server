@@ -20,6 +20,12 @@ const style: StyleDictionary = {
     bold: true,
     alignment: 'left',
   },
+  footer: {
+    fontSize: 10,
+    italics: true,
+    alignment: 'center',
+    margin: [0, 0, 0, 20],
+  },
 };
 
 const logo: Content = {
@@ -73,6 +79,10 @@ export const getEmploymentLetterReport = (): TDocumentDefinitions => {
         style: 'signature',
       },
     ],
+    footer: {
+      text: 'Este documento es una constancia de empleo y no representa un compromiso laboral.',
+      style: 'footer',
+    },
   };
   return docDefinition;
 };
