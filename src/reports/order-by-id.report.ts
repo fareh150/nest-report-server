@@ -26,10 +26,12 @@ export const orderByIdReport = (): TDocumentDefinitions => {
     header: logo,
     pageMargins: [40, 70, 40, 60],
     content: [
+      // Header
       {
         text: 'Tucan Code',
         style: 'header',
       },
+      // Address and recipe
       {
         columns: [
           {
