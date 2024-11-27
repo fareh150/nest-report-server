@@ -37,6 +37,18 @@ export const getCountryReport = (
               country.continent,
               country.local_name,
             ]),
+            ['', '', '', '', '', ''],
+            [
+              '',
+              '',
+              '',
+              '',
+              'Total',
+              {
+                text: `${countries.length} países`,
+                bold: true,
+              },
+            ],
           ],
         },
       },
