@@ -3,7 +3,7 @@ import type {
   TDocumentDefinitions,
   StyleDictionary,
 } from 'pdfmake/interfaces';
-import { DateFormatter } from 'src/helpers';
+import { CurrencyFormatter, DateFormatter } from 'src/helpers';
 
 const logo: Content = {
   image: 'src/assets/tucan-banner.png',
@@ -69,6 +69,48 @@ export const orderByIdReport = (): TDocumentDefinitions => {
             Michael Holz
             Grenzacherweg 237`,
         ],
+      },
+      // Tabla del detalle de la orden
+      {
+        layout: 'headerLineOnly',
+        margin: [0, 20],
+        table: {
+          headerRows: 1,
+          widths: [50, '*', 'auto', 'auto', 'auto'],
+          body: [
+            ['ID', 'Descripción', 'Cantidad', 'Precio', 'Total'],
+            [
+              '1',
+              'Producto 1',
+              '1',
+              '100',
+              {
+                text: CurrencyFormatter.formatCurrency(100),
+                alignment: 'right',
+              },
+            ],
+            [
+              '2',
+              'Producto 2',
+              '2',
+              '200',
+              {
+                text: CurrencyFormatter.formatCurrency(1500),
+                alignment: 'right',
+              },
+            ],
+            [
+              '3',
+              'Producto 3',
+              '3',
+              '300',
+              {
+                text: CurrencyFormatter.formatCurrency(900),
+                alignment: 'right',
+              },
+            ],
+          ],
+        },
       },
     ],
   };
