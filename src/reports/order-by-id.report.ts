@@ -58,6 +58,18 @@ export const orderByIdReport = (): TDocumentDefinitions => {
         fit: 100,
         alignment: 'right',
       },
+      // Client direction
+      {
+        text: [
+          {
+            text: 'Cobrar a: \n',
+            bold: true,
+          },
+          `Razón Social: Richter Supermarkt
+            Michael Holz
+            Grenzacherweg 237`,
+        ],
+      },
     ],
   };
 };
