@@ -64,12 +64,13 @@ export const getCountryReport = (
         layout: 'noBorders',
         table: {
           headerRows: 1,
-          //widths: ['*', '*'],
+          widths: [50, 50, 50, '*', 'auto', '*'],
           body: [
             [
               {
                 text: 'Total de países',
                 bold: true,
+                //colSpan: 4, merge rows
               },
               {
                 text: countries.length.toString(),
