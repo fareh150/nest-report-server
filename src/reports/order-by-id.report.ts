@@ -41,7 +41,13 @@ export const orderByIdReport = (): TDocumentDefinitions => {
                     https://devtalles.com`,
           },
           {
-            text: `Recibo No. 3213213541 \nFecha: ${DateFormatter.getDDMMYYYY(new Date())}\nPagar antes de : ${DateFormatter.getDDMMYYYY(new Date())}`,
+            text: [
+              {
+                text: `Recibo No. 3213213541 \n`,
+                bold: true,
+              },
+              `Fecha: ${DateFormatter.getDDMMYYYY(new Date())}\nPagar antes de : ${DateFormatter.getDDMMYYYY(new Date())}`,
+            ],
             alignment: 'right',
           },
         ],
