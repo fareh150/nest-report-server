@@ -23,7 +23,7 @@ export const getCountryReport = (
     pageMargins: [40, 110, 40, 60], // [left, top, right, bottom]
     content: [
       {
-        layout: 'lightHorizontalLines',
+        layout: 'customLayout01', //'lightHorizontalLines',
         table: {
           headerRows: 1,
           widths: [50, 50, 50, '*', 'auto', '*'], // need to be same length than body
