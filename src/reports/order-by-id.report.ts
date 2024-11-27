@@ -46,6 +46,12 @@ export const orderByIdReport = (): TDocumentDefinitions => {
           },
         ],
       },
+      // Qr code
+      {
+        qr: 'youtube.com',
+        fit: 100,
+        alignment: 'right',
+      },
     ],
   };
 };
