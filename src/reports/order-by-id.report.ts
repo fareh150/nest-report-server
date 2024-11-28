@@ -112,6 +112,8 @@ export const orderByIdReport = (): TDocumentDefinitions => {
           ],
         },
       },
+      // Salto de linea
+      '\n\n',
     ],
   };
 };
