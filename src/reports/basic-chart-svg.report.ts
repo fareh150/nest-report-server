@@ -53,8 +53,10 @@ const generateDonut = () => {
 
 export const getBasicChartSvgReport =
   async (): Promise<TDocumentDefinitions> => {
-    const chart = await generateChartImage();
-    const chartdonut = await generateDonut();
+    const [chart, chartDonut] = await Promise.all([
+      generateChartImage(),
+      generateDonut(),
+    ]);
 
     return {
       content: [
@@ -68,7 +70,7 @@ export const getBasicChartSvgReport =
           width: 300,
         },
         {
-          image: chartdonut,
+          image: chartDonut,
           width: 500,
         },
       ],
