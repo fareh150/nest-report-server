@@ -9,7 +9,8 @@ export const getBasicChartSvgReport =
       content: [
         {
           svg: svgContent,
-          width: 300,
+          width: 200,
+          fit: [100, 100],
         },
       ],
     };
