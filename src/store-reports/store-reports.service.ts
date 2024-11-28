@@ -31,9 +31,10 @@ export class StoreReportsService extends PrismaClient implements OnModuleInit {
     if (!order) {
       throw new NotFoundException(`Order with id ${orderId} not found`);
     }
-    console.log(JSON.stringify(order, null, 2));
 
-    const docDefinition = orderByIdReport();
+    const docDefinition = orderByIdReport({
+      data: order as any,
+    });
 
     const doc = this.printerService.createPdf(docDefinition);
     return doc;
