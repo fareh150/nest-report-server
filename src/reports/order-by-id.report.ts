@@ -114,6 +114,39 @@ export const orderByIdReport = (): TDocumentDefinitions => {
       },
       // Salto de linea
       '\n\n',
+      // Totales
+      {
+        columns: [
+          {
+            width: '*',
+            text: '',
+          },
+          {
+            width: 'auto',
+            layout: 'noBorders',
+            table: {
+              body: [
+                [
+                  'Subtotal',
+                  {
+                    text: CurrencyFormatter.formatCurrency(1000),
+                    alignment: 'right',
+                  },
+                ],
+                [
+                  { text: 'Total', bold: true },
+                  {
+                    text: CurrencyFormatter.formatCurrency(1500),
+                    alignment: 'right',
+
+                    bold: true,
+                  },
+                ],
+              ],
+            },
+          },
+        ],
+      },
     ],
   };
 };
