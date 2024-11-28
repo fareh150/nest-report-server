@@ -19,7 +19,7 @@ const generateChartImage = async () => {
     },
   };
 
-  return Utils.chartJsToImage(chartConfig);
+  return Utils.chartJsToImage(chartConfig, { height: 200, width: 200 });
 };
 
 export const getBasicChartSvgReport =
@@ -34,7 +34,7 @@ export const getBasicChartSvgReport =
         },
         {
           image: chart,
-          width: 500,
+          width: 200,
         },
       ],
     };
