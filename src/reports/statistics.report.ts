@@ -1,5 +1,6 @@
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import * as Utils from '../helpers/chart-utils';
+import { title } from 'process';
 
 const generateTopCountryDonut = async (
   topCountries: TopCountry[],
@@ -22,10 +23,17 @@ const generateTopCountryDonut = async (
       legend: {
         position: 'left',
       },
+      title: {
+        text: 'someTitle',
+        display: true,
+      },
       plugins: {
         datalabels: {
           color: 'white',
-          //text: 'Chart.js Doughnut Chart',
+          font: {
+            weight: 'bold',
+            size: 16,
+          },
         },
       },
     },
