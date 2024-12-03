@@ -6,6 +6,7 @@ export const getCommunityReport = (): TDocumentDefinitions => {
       fontSize: 12,
     },
     content: [
+      // logo - Dirección - Numero De orden
       {
         columns: [
           {
@@ -15,6 +16,27 @@ export const getCommunityReport = (): TDocumentDefinitions => {
           {
             alignment: 'center',
             text: ' Forest Admin Community Report\nRUT: 123456789\nCamino montaña 123\nTelefono 123456789',
+          },
+          {
+            alignment: 'right',
+            width: 140,
+            layout: 'borderBlue',
+            table: {
+              body: [
+                [
+                  {
+                    layout: 'noBorders',
+                    table: {
+                      body: [
+                        ['No. Orden', '123456'],
+                        ['Fecha', '12/12/2021'],
+                        ['Hora', '12:00'],
+                      ],
+                    },
+                  },
+                ],
+              ],
+            },
           },
         ],
       },
