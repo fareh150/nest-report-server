@@ -19,5 +19,5 @@ export const getLineChart = async (): Promise<string> => {
     type: 'line',
     data: data,
   };
-  return Utils.chartJsToImage(config);
+  return Utils.chartJsToImage(config, { width: 400, height: 200 });
 };
