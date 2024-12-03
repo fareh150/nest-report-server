@@ -21,15 +21,41 @@ export const getStatisticsReport = async (
       value: country.customers,
     })),
     showTitle: true,
-    titleText: 'Top 10 countries by customers',
-    position: 'bottom',
+    position: 'left',
   });
 
   const docDefinition: TDocumentDefinitions = {
     content: [
       {
-        image: donutChart,
-        width: 500,
+        columns: [
+          {
+            stack: [
+              {
+                text: 'Top 10 países con más clientes',
+                alignment: 'center',
+              },
+              {
+                image: donutChart,
+                width: 300,
+              },
+            ],
+          },
+          {
+            layout: 'lightHorizontalLines',
+            width: 'auto',
+            table: {
+              headerRows: 1,
+              widths: [100, 'auto'],
+              body: [
+                ['Pais', 'Clientes'],
+                ...options.topCountries.map((country) => [
+                  country.country,
+                  country.customers,
+                ]),
+              ],
+            },
+          },
+        ],
       },
     ],
   };
