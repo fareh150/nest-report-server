@@ -72,6 +72,29 @@ export const getCommunityReport = (): TDocumentDefinitions => {
               {},
               {},
             ],
+            [
+              {
+                text: 'Razon Social',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+                //border: [false, false, false, false],
+              },
+              {
+                text: 'Nombre de la empresa',
+                fillColor: 'white',
+              },
+              {
+                text: 'direccion',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+              },
+              {
+                text: 'Camino montaña 123',
+                fillColor: 'white',
+              },
+            ],
           ],
         },
       },
