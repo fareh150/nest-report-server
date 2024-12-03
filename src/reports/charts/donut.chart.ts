@@ -13,11 +13,7 @@ interface DonutOptions {
 }
 
 export const getDonutChart = async (options: DonutOptions): Promise<string> => {
-  const {
-    position = 'top',
-    showTitle = false,
-    titleText = 'Send titleText',
-  } = options;
+  const { position = 'top', showTitle = false, titleText = '' } = options;
   const data = {
     labels: options.entries.map((e) => e.label),
     datasets: [
