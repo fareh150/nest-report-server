@@ -95,6 +95,52 @@ export const getCommunityReport = (): TDocumentDefinitions => {
                 fillColor: 'white',
               },
             ],
+            [
+              {
+                text: 'RUT',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+                //border: [false, false, false, false],
+              },
+              {
+                text: '123456789',
+                fillColor: 'white',
+              },
+              {
+                text: 'Telefono',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+              },
+              {
+                text: '123456789',
+                fillColor: 'white',
+              },
+            ],
+            [
+              {
+                text: 'Giro',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+                //border: [false, false, false, false],
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+              {
+                text: 'Condicion de pago',
+                fillColor: '#343a40',
+                color: 'white',
+                bold: true,
+              },
+              {
+                text: '',
+                fillColor: 'white',
+              },
+            ],
           ],
         },
       },
