@@ -31,4 +31,26 @@ export class ExtraReportsService {
     const doc = this.printerService.createPdf(docDefinition);
     return doc;
   }
+
+  getCommunityReport() {
+    const html = fs.readFileSync('src/reports/html/basic-03.html', 'utf8');
+
+    const content = getHtmlContent(html, {
+      client: 'John Doe',
+      title: 'Cusrso de Node.js',
+    });
+
+    const docDefinition: TDocumentDefinitions = {
+      pageMargins: [40, 110, 40, 60],
+      header: headerSection({
+        title: 'HTML Report',
+        subtitle: 'This is a simple HTML report',
+      }),
+      footer: footerSection,
+      content,
+    };
+
+    const doc = this.printerService.createPdf(docDefinition);
+    return doc;
+  }
 }
