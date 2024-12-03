@@ -1,6 +1,7 @@
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
-import { getDonutChart, getLineChart } from './charts';
+import { getBarsChart, getDonutChart, getLineChart } from './charts';
 import { headerSection } from './sections/header.section';
+import { footerSection } from './sections/footer.section';
 
 interface TopCountry {
   country: string;
@@ -16,7 +17,7 @@ interface ReportOptions {
 export const getStatisticsReport = async (
   options: ReportOptions,
 ): Promise<TDocumentDefinitions> => {
-  const [donutChart, lineChart] = await Promise.all([
+  const [donutChart, lineChart, barChart1] = await Promise.all([
     getDonutChart({
       entries: options.topCountries.map((country) => ({
         label: country.country,
@@ -26,6 +27,7 @@ export const getStatisticsReport = async (
       position: 'left',
     }),
     getLineChart(),
+    getBarsChart(),
   ]);
 
   const docDefinition: TDocumentDefinitions = {
@@ -34,6 +36,7 @@ export const getStatisticsReport = async (
       title: options.title ?? 'Estadísticas',
       subtitle: options.subtitle ?? 'Reporte de estadísticas',
     }),
+    footer: footerSection,
     content: [
       {
         columns: [
@@ -71,6 +74,16 @@ export const getStatisticsReport = async (
         image: lineChart,
         width: 500,
         margin: [0, 20, 0, 0],
+      },
+      {
+        margin: [0, 20, 0, 0],
+        columnGap: 10,
+        columns: [
+          {
+            image: barChart1,
+            width: 250,
+          },
+        ],
       },
     ],
   };
