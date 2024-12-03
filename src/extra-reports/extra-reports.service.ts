@@ -11,9 +11,12 @@ export class ExtraReportsService {
   constructor(private readonly printerService: PrinterService) {}
   getHtmlReport() {
     // get the code of the html file
-    const html = fs.readFileSync('src/reports/html/basic-02.html', 'utf8');
+    const html = fs.readFileSync('src/reports/html/basic-03.html', 'utf8');
 
-    const content = getHtmlContent(html);
+    const content = getHtmlContent(html, {
+      client: 'John Doe',
+      title: 'Cusrso de Node.js',
+    });
 
     const docDefinition: TDocumentDefinitions = {
       pageMargins: [40, 110, 40, 60],
