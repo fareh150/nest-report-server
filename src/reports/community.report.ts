@@ -40,6 +40,21 @@ export const getCommunityReport = (): TDocumentDefinitions => {
           },
         ],
       },
+      // Horizontal Line
+      {
+        margin: [0, 10],
+        canvas: [
+          {
+            type: 'line',
+            x1: 0,
+            y1: 5,
+            x2: 520,
+            y2: 5,
+            lineWidth: 1,
+            lineColor: '3a4546',
+          },
+        ],
+      },
     ],
   };
 
