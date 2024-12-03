@@ -39,4 +39,23 @@ export class ExtraReportsService {
     const doc = this.printerService.createPdf(docDefinition);
     return doc;
   }
+
+  getCustomSize() {
+    const doc = this.printerService.createPdf({
+      content: [
+        {
+          qr: 'https://www.google.com',
+          fit: 100,
+          alignment: 'center',
+        },
+        {
+          text: 'Reporte con tamaño personalizado',
+          fontSize: 20,
+          alignment: 'center',
+          margin: [0, 20],
+        },
+      ],
+    });
+    return doc;
+  }
 }
