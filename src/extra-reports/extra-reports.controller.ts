@@ -18,7 +18,7 @@ export class ExtraReportsController {
 
   @Get('community-report')
   async getCommunityReport(@Res() response: Response) {
-    const pdfDoc = this.extraReportsService.getCommunityReport();
+    const pdfDoc = this.extraReportsService.getCommunity();
 
     response.setHeader('Content-Type', 'application/pdf');
     pdfDoc.info.Title = 'community-title';
