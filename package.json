@@ -28,6 +28,7 @@
     "@prisma/client": "^5.22.0",
     "axios": "^1.7.8",
     "html-to-pdfmake": "^2.5.17",
+    "jsdom": "^25.0.1",
     "pdfmake": "^0.2.15",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
