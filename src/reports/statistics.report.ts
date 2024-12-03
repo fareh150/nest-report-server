@@ -33,10 +33,11 @@ export const getStatisticsReport = async (
               {
                 text: 'Top 10 países con más clientes',
                 alignment: 'center',
+                margin: [0, 0, 0, 10],
               },
               {
                 image: donutChart,
-                width: 300,
+                width: 320,
               },
             ],
           },
