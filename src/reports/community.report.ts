@@ -55,6 +55,26 @@ export const getCommunityReport = (): TDocumentDefinitions => {
           },
         ],
       },
+      // Detalles del cliente
+      {
+        table: {
+          widths: ['auto', '*', 'auto', '*'],
+          body: [
+            [
+              {
+                text: 'Datos del cliente',
+                fillColor: '#5775e1',
+                color: 'white',
+                colSpan: 4,
+                border: [false, false, false, false], // para elegir que borde mostramos
+              },
+              {},
+              {},
+              {},
+            ],
+          ],
+        },
+      },
     ],
   };
 
