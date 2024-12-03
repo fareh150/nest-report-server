@@ -42,6 +42,11 @@ export class ExtraReportsService {
 
   getCustomSize() {
     const doc = this.printerService.createPdf({
+      // pageSize: 'TABLOID'
+      pageSize: {
+        width: 150,
+        height: 300,
+      },
       content: [
         {
           qr: 'https://www.google.com',
@@ -50,7 +55,7 @@ export class ExtraReportsService {
         },
         {
           text: 'Reporte con tamaño personalizado',
-          fontSize: 20,
+          fontSize: 10,
           alignment: 'center',
           margin: [0, 20],
         },
